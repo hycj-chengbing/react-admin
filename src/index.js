@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './App.less';
+import "@/assets/css/reset.css";
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import memoryUtils from '@/utils/memoryUtils'
+import storageUtils from '@/utils/storageUtils'
 
+
+// 读取local中的保存的数据user ,保存到内存中
+const user=storageUtils.getUser()
+memoryUtils.user=user
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
